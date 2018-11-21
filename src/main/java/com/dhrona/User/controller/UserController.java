@@ -17,13 +17,9 @@ public class UserController {
     public String welcome(){
         return "welcome to dhrona MS session";
     }
-
     @PostMapping("/")
     public UserDetails register(@Valid @RequestBody UserRegistration registrationDetails){
-        String response = null;
-        UserDetails user = userService.register(registrationDetails);
-        /*return new ResponseEntity<UserDetails>(user,HttpStatus.CREATED);*/
-        return user;
+        return userService.register(registrationDetails);
     }
 
 

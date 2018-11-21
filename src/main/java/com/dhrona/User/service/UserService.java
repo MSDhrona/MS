@@ -4,6 +4,5 @@ import com.dhrona.User.bean.UserRegistration;
 import com.dhrona.User.entity.UserDetails;
 
 public interface UserService {
-    public UserDetails register(UserRegistration userRegistration);
-
+     UserDetails register(UserRegistration userRegistration);
 }

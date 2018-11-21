@@ -8,7 +8,6 @@ import javax.validation.constraints.Pattern;
 
 @Data
 public class UserRegistration {
-
     @NotEmpty(message = "userName should not be empty")
     private String userName;
     @NotEmpty(message = "password should not be empty")

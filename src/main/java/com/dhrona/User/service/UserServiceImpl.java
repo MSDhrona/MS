@@ -8,7 +8,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -23,7 +22,6 @@ public class UserServiceImpl implements UserService {
                 BeanUtils.copyProperties(userRegistration,userDetails);
                  registeredUser =   userDetailsRepository.save(userDetails);
             }catch(Exception e){
-                System.out.println("Exception Occured");
             }
         return registeredUser;
     }

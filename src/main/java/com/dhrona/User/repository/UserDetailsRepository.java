@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserDetailsRepository extends MongoRepository<UserDetails,Object> {
-    /*public UserDetails save(UserDetails userDetails);*/
 
 }
