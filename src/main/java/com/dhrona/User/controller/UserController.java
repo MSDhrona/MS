@@ -6,6 +6,8 @@ import com.dhrona.User.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -16,23 +18,13 @@ public class UserController {
         return "welcome to dhrona MS session";
     }
 
-    @PostMapping("/register")
-    public String register(@RequestBody UserRegistration registrationDetails){
+    @PostMapping("/")
+    public UserDetails register(@Valid @RequestBody UserRegistration registrationDetails){
         String response = null;
-        System.out.println("Inside register");
         UserDetails user = userService.register(registrationDetails);
-        if(user!=null){
-            System.out.println("UserName" +user.getUserName());
-            response = "User created Successfully";
-        }else{
-            response = "Unable to create User created Successfully";
-            System.out.println("Error");
-        }
-        return response;
+        /*return new ResponseEntity<UserDetails>(user,HttpStatus.CREATED);*/
+        return user;
     }
 
-//update
-    //find by id
-    //find all
 
 }
