@@ -1,7 +1,6 @@
 package com.dhrona.User.exception;
 
 import com.dhrona.User.bean.ExceptionResponse;
-import org.apache.tomcat.util.http.fileupload.util.Streams;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class UserExceptionHandler {
