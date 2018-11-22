@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
                 BeanUtils.copyProperties(userRegistration,userDetails);
                  registeredUser =   userDetailsRepository.save(userDetails);
             }catch(Exception e){
-                throw new Exception("Unable to register the User");
+                 throw new Exception("Unable to register the User");
             }
         return registeredUser;
     }

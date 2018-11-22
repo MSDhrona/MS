@@ -38,5 +38,4 @@ public class UserExceptionHandler {
         errorMsg.add(e.getMessage());
         return new ResponseEntity<ExceptionResponse>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
 }

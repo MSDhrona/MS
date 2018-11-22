@@ -11,5 +11,4 @@ public class UserUtils {
         if (BCrypt.checkpw(password, hashedPassword)) checkPwd = true;
             return checkPwd;
     }
-
 }
