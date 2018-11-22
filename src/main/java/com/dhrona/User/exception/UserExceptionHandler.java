@@ -36,6 +36,7 @@ public class UserExceptionHandler {
         response.setErrorMessage("System Error");
         List<String> errorMsg = new ArrayList<String>();
         errorMsg.add(e.getMessage());
+        response.setErrors(errorMsg);
         return new ResponseEntity<ExceptionResponse>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
