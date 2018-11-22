@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
     UserDetailsRepository userDetailsRepository;
 
     @Override
-    public UserDetails register(UserRegistration userRegistration) {
+    public UserDetails register(UserRegistration userRegistration) throws Exception {
         UserDetails registeredUser = null;
             try{
                 userRegistration.setPassword(UserUtils.hashPassword(userRegistration.getPassword()));
@@ -22,6 +22,7 @@ public class UserServiceImpl implements UserService {
                 BeanUtils.copyProperties(userRegistration,userDetails);
                  registeredUser =   userDetailsRepository.save(userDetails);
             }catch(Exception e){
+                throw new Exception("Unable to register the User");
             }
         return registeredUser;
     }
