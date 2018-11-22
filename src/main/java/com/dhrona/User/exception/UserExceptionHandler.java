@@ -29,7 +29,6 @@ public class UserExceptionHandler {
         response.setErrors(errorMsg);
         return new ResponseEntity<ExceptionResponse>(response, HttpStatus.BAD_REQUEST);
     }
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionResponse> invalidInput(Exception e){
         ExceptionResponse response = new ExceptionResponse();
